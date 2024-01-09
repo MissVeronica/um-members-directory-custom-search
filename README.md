@@ -13,6 +13,7 @@ Extension to Ultimate Member for selecting Members Directory Search fields.
 
 ## Updates
 1. Version 2.0.0 Rewrite of the old plugin "Reduced Member Directory Search" now with the latest UM Hooks
+2. Version 2.1.0 Code improvement
 
 ## Installation
 1. Install by downloading the plugin ZIP file and install as a new Plugin, which you upload in WordPress -> Plugins -> Add New -> Upload Plugin.

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:      Ultimate Member - Members Directory Custom Search
  * Description:      Extension to Ultimate Member for selecting Members Directory Search fields.
- * Version:          2.0.0
+ * Version:          2.1.0
  * Requires PHP:     7.4
  * Author:           Miss Veronica
  * License:          GPL v2 or later
@@ -40,8 +40,11 @@ class UM_Members_Directory_Custom_Search {
         add_filter( 'um_general_search_custom_fields',        array( $this, 'general_search_custom_fields' ), 10, 1 );
         add_filter( 'um_member_directory_core_search_fields', array( $this, 'member_directory_core_search_fields' ), 10, 1 );
         add_action( 'add_meta_boxes',                         array( $this, 'add_metabox_directory_custom_search' ), 1 );
-        add_action( 'save_post',                              array( UM()->classes['admin_metabox'], 'save_metabox_directory' ), 10, 2 );
         add_action( 'um_before_member_directory_save',        array( $this, 'um_before_member_directory_save_custom_search' ), 10, 1 );
+
+        if ( isset( UM()->classes['admin_metabox'] )) {
+            add_action( 'save_post',                          array( UM()->classes['admin_metabox'], 'save_metabox_directory' ), 10, 2 );
+        }
     }
 
     public function add_metabox_directory_custom_search() {
